@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reserva Fácil - Home</title>
+    </head>
+    <body>
+        <h1>Eventos disponibles</h1>
+        <% eventos.forEach(evento => {%>
+            <div>
+                <h2><%= evento.nombre%></h2>
+                <img src="<%= evento.imagen %>"  alt="<%= evento.nombre %>" />
+                <% evento.funciones.forEach(funcion => { %>
+                    <p><%= funcion.hora %> - <%= funcion.lugar.nombre %> (<%= funcion.lugar.capacidad - funcion.reserva.lenght %> asientos disponibles</p>
+                    <% }) %>
+            </div>
+            <% }) %>            
+    </body>
+</html>
